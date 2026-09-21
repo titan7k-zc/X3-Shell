@@ -1,0 +1,34 @@
+sudo pacman -S --needed gcc make 
+
+make clean
+make
+sudo make install   [normally after install all works if not continue steps ]
+sudo systemctl daemon-reload
+sudo systemctl enable --now x2-bright.service  [for keyboard]
+
+
+
+manual -> sudo ./x2-bright lum 100000  (before enabled service) [5000-500000]
+
+// cant use both at the same time (service , sudo ./x2-bright lum 100000 ) so use this ->
+manual -> sudo nano /sys/class/backlight/nvidia_0/brightness (after enabled service)[0-100]
+//or 
+brightnessctl set 50% / get / set 30%+ / set 30%-  
+
+
+// no needed (service disable)
+to stop -> sudo systemctl stop x2-bright.service
+to dsable -> sudo systemctl disable --now x2-bright.service 
+Remove the installed service file -> sudo rm -f /usr/lib/systemd/system/x2-bright.service
+Reload systemd -> sudo systemctl daemon-reload
+Reset any failed state -> sudo systemctl reset-failed x2-bright.service
+
+Verify it's gone -> systemctl status x2-bright.service
+
+
+
+// uninstall make
+
+sudo make uninstall
+make clean
+sudo systemctl daemon-reload
