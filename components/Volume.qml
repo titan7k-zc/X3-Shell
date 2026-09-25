@@ -45,7 +45,7 @@ Item {
 
         switch (deviceKind) {
         case "bluetooth":
-            return "\uf025"          // bluetooth headset glyph
+            return ""          // bluetooth headset glyph
         case "headphone":
             return "\uf025"          // headphones glyph
         case "speaker":
@@ -131,13 +131,14 @@ Item {
         anchors.fill: parent
         // spacing: 6
 
+
         Text {
             text: root.icon
             color: Colors.volumeIconColor
 
             font {
                 family: "JetBrainsMono Nerd Font Mono"
-                pixelSize: 20
+                pixelSize: root.deviceKind === "bluetooth" ? 17: 20
                 weight: 600
                 letterSpacing: 0
             }
