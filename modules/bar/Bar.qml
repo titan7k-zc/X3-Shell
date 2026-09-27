@@ -301,6 +301,7 @@ Scope{
 
                 rad:root.rootRadius
                 
+                
                 file:"../modules/overview/Overview.qml"
 
                 
@@ -316,6 +317,8 @@ Scope{
                 id:left_wall_pop
                 show:false
                 anchorLeft:true
+                
+                unloadOnClose:true
 
                 rad:root.rootRadius
                 

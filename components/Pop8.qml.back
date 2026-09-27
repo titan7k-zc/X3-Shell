@@ -5,41 +5,22 @@ import "../config"
 import "."
 import QtQuick.Effects
 
-
 Scope {
     id: root
 
     property bool show: false
-    property bool unloadOnClose: false
+    property bool reloadOnOpen: false
 
-    // true immediately on open, stays true until the close animation finishes
-    property bool loaderActive: false
 
     onShowChanged: {
-        if (show) {
-            closeTimer.stop()
-            loaderActive = true
-        } else if (root.unloadOnClose) {
-            closeTimer.start()   // keep item alive until close anim finishes, then unload
-        }
-
         if (show && load.item) {
             load.item.forceActiveFocus()
         }
-
+        
         if (load.item && load.item.hasOwnProperty("showing"))
             load.item.showing = root.show
     }
-
-    Timer {
-        id: closeTimer
-        // cover the longest leg of your close transition (pause + shrink)
-        interval: root.animDuration + 5000
-        onTriggered: root.loaderActive = false
-    }
     
-
-
 
     property var anchorTop: false
     property var anchorBottom: false
@@ -264,27 +245,20 @@ Scope {
                     property real itemWid:load.width
 
 
+
                     Loader {
                         id: load
-
-                        property real cw: 0
-                        property real ch: 0
-                        width: cw
-                        height: ch
-
+                        width: load.item ? load.item.implicitWidth : 0
+                        height: load.item ? load.item.implicitHeight : 0
                         anchors.centerIn: parent
+                        source: root.file
 
-                        source: root.unloadOnClose
-                            ? (root.loaderActive ? root.file : "")
-                            : root.file
 
+
+                        // for menu focus
                         active: true
-
                         onLoaded: {
-                            if (item) {
-                                cw = item.implicitWidth
-                                ch = item.implicitHeight
-                            }
+                            if (root.show) item.forceActiveFocus();
                         }
 
                         Keys.onEscapePressed: {
@@ -295,12 +269,6 @@ Scope {
                             if (!item)
                                 return
 
-                            if (item.hasOwnProperty("showing"))
-                                item.showing = root.show
-
-                            if (root.show)
-                                item.forceActiveFocus()
-
                             if (typeof item.closed === "function") {
                                 item.closed.connect(function() {
                                     root.show = false
@@ -308,12 +276,6 @@ Scope {
                             }
                         }
 
-                        Connections {
-                            target: load.item
-                            enabled: load.item !== null
-                            function onImplicitWidthChanged() { load.cw = load.item.implicitWidth }
-                            function onImplicitHeightChanged() { load.ch = load.item.implicitHeight }
-                        }
                     }
 
 
