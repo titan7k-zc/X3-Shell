@@ -35,7 +35,7 @@ Item {
 
             GridLayout {
                 anchors.fill: parent
-                anchors.margins: 10
+                anchors.margins: 20
                 // columns: 4
                 // rows: 2
                 columnSpacing: 15
@@ -241,8 +241,6 @@ Item {
                                 value: SystemMonitor.cpuUsage
                                 barWidth: col.barWidth
                                 barHeight: col.barHeight
-                                backgroundColor:Colors.overviewLevelBarBackgroundColor
-                                fillColor:Colors.overviewlevelBarFillColor
                             }
 
                             Text {
@@ -284,8 +282,6 @@ Item {
                                 value: SystemMonitor.gpuUsage
                                 barWidth: col.barWidth
                                 barHeight: col.barHeight
-                                backgroundColor:Colors.overviewLevelBarBackgroundColor
-                                fillColor:Colors.overviewlevelBarFillColor
                             }
 
                             Text {
@@ -352,6 +348,16 @@ Item {
                         // anchors.verticalCenterOffset:-2
                         // anchors.horizontalCenterOffset:-2
                     }
+                }
+
+
+                // empty space
+                Item {
+                    Layout.column: 5
+                    Layout.row: 0
+                    Layout.rowSpan:2
+                    Layout.preferredWidth: 30
+                    Layout.fillHeight: true
                 }
             }
 

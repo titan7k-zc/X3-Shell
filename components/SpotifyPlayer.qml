@@ -5,6 +5,7 @@ import QtQuick.Effects
 
 import "../config"
 import "../services"
+import "../components"
 
 
 // cash img path ->/home/titan/.cache/quickshell/by-shell
@@ -14,51 +15,88 @@ Item {
     id: root
     // height: 180
     // width: height * 2
-    width: 180
-    height: width * 1.8
+    width: 220
+    height: (width-40) * 1.8
 
 
     Rectangle {
         anchors.fill: parent
         radius: 20
         color: Colors.spotifyPanelColor
-
+        
         ColumnLayout {
             anchors.fill: parent
             spacing: 20
+            
+            RowLayout{
+                Layout.alignment: Qt.AlignHCenter
+                spacing: 10
 
-            // ---------------- album art ----------------
-            ClippingRectangle {
-                id: albumArt
-                Layout.preferredWidth: Math.min(root.width, root.height)
-                Layout.preferredHeight: Layout.preferredWidth
-                Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                radius: Layout.preferredHeight/12
-                border.color: Colors.spotifyAlbumBorder
-                border.width: 3
-                opacity: 0.7
-                color: Colors.spotifyAlbumPlaceholderColor
 
-                antialiasing: true
-                layer.enabled: true
-                layer.smooth: true
-                layer.samples: 4   // try 8 if it's still visibly rough
+                LevelBar{
+                    id:volumeLevelBar
+                    vertical: true
+                    value: SpotifyServices.volume*100
+                    barWidth: 5
+                    barHeight: 100
 
-                Image {
-                    id: artImage
-                    anchors.fill: parent
-                    source: SpotifyServices.displayArtSource
-                    fillMode: Image.PreserveAspectCrop
-                    asynchronous: true
-                    cache: false
+                    interactive: true
+                    onNewUpdateValueChanged: {
+                        SpotifyServices.setVolume(Math.round(newUpdateValue)/100)
+                        // console.log("volumeLevelBar.value: "+Math.round(newUpdateValue))
+                    }
+                }
+
+
+                // ---------------- album art ----------------
+                ClippingRectangle {
+                    id: albumArt
+                    Layout.preferredWidth: Math.min(root.width-40, root.height)
+                    Layout.preferredHeight: Layout.preferredWidth
+                    Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
+                    radius: Layout.preferredHeight/12
+                    border.color: Colors.spotifyAlbumBorder
+                    border.width: 3
+                    opacity: 0.7
+                    color: Colors.spotifyAlbumPlaceholderColor
+
                     antialiasing: true
-                    onStatusChanged: {
-                        if (status === Image.Error &&
-                            source.toString() !== ("file://" + SpotifyServices.artCachePath)) {
-                            source = "file://" + SpotifyServices.artCachePath;
+                    layer.enabled: true
+                    layer.smooth: true
+                    layer.samples: 4   // try 8 if it's still visibly rough
+
+                    Image {
+                        id: artImage
+                        anchors.fill: parent
+                        source: SpotifyServices.displayArtSource
+                        fillMode: Image.PreserveAspectCrop
+                        asynchronous: true
+                        cache: false
+                        antialiasing: true
+                        onStatusChanged: {
+                            if (status === Image.Error &&
+                                source.toString() !== ("file://" + SpotifyServices.artCachePath)) {
+                                source = "file://" + SpotifyServices.artCachePath;
+                            }
                         }
                     }
                 }
+
+
+
+                LevelBar{
+                    id:positionLevelBar
+                    vertical: true
+                    value: SpotifyServices.position / SpotifyServices.length * 100
+                    barWidth: 5
+                    barHeight: 100
+                    interactive: true
+                    onNewUpdateValueChanged: {
+                        SpotifyServices.setPosition(newUpdateValue/100)
+                        // console.log("positionLevelBar.value: "+newUpdateValue)
+                    }
+                }
+
             }
 
 

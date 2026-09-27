@@ -146,8 +146,8 @@ Singleton {
     readonly property color overviewIndicatorTrackColor: Qt.rgba(overviewIndicatorColor.r, overviewIndicatorColor.g, overviewIndicatorColor.b, 0.1)//Qt.rgba(1, 1, 1, 0.12)
     readonly property color overviewWarningColor: activeColor // for temperature value
     readonly property color overviewNormalColor: mainTextColor // for temperature value
-    readonly property color overviewLevelBarBackgroundColor: Qt.rgba(overviewIndicatorColor.r, overviewIndicatorColor.g, overviewIndicatorColor.b, 0.1)//mainTextColor 
-    readonly property color overviewlevelBarFillColor: overviewIndicatorColor 
+    readonly property color levelBarBackgroundColor: Qt.rgba(overviewIndicatorColor.r, overviewIndicatorColor.g, overviewIndicatorColor.b, 0.1)//mainTextColor 
+    readonly property color levelBarFillColor: overviewIndicatorColor 
 
     // === Power menu ===
     readonly property color powerButtonColor: "Transparent"

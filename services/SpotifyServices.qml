@@ -41,6 +41,43 @@ Singleton {
         return cached.artist || "";
     }
 
+    property real volume: {
+        if (player && player.volume) return player.volume;
+        const cached = readCachedMeta();
+        return cached.volume || 0;
+    }
+
+    function setVolume(v) {
+        if (player) {
+            player.volume = Math.max(0, Math.min(1, v));
+
+            if (v > 0 && player.muted)
+                player.muted = false;
+        }
+
+        const cached = readCachedMeta();
+        writeCachedMeta(cached.title, cached.artist, v);
+    }
+
+    property real length: player ? player.length : 0
+    property real position: player ? player.position : 0
+        
+    function setPosition(progress) {
+        if (player && length > 0) {
+            player.position = Math.max(
+                0,
+                Math.min(length, progress * length)
+            )
+        }
+    }
+
+    FrameAnimation {
+        running: root.player ? root.player.isPlaying : false
+        onTriggered: root.player.positionChanged()
+    }
+
+
+
     // ---- metadata cache (title/artist) ----
     FileView {
         id: metaFile
@@ -56,8 +93,8 @@ Singleton {
         }
     }
 
-    function writeCachedMeta(title, artist) {
-        metaFile.setText(JSON.stringify({ title: title, artist: artist }));
+    function writeCachedMeta(title, artist, volume) {
+        metaFile.setText(JSON.stringify({ title: title, artist: artist, volume:volume }));
     }
 
     // ---- ensure cache dir exists once at startup ----
@@ -89,7 +126,7 @@ Singleton {
         }
         function onTrackTitleChanged() {
             if (root.player) {
-                root.writeCachedMeta(root.player.trackTitle, root.player.trackArtist);
+                root.writeCachedMeta(root.player.trackTitle, root.player.trackArtist, root.player.volume);
             }
         }
     }
@@ -136,6 +173,8 @@ Singleton {
             launcher.startDetached();
         }
     }
+
+
 
     // ---- public controls ----
     function playPause() {
