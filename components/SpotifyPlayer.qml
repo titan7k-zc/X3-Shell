@@ -117,10 +117,11 @@ Item {
                 Text {
                     Layout.alignment: Qt.AlignHCenter
                     Layout.maximumWidth: Math.min(root.height,root.width)-20
-                    text: SpotifyServices.displayTitle
+                    text: "2"+SpotifyServices.displayTitle
                     color: Colors.spotifyTitleColor
+                    font.family: "Nunito"
+                    font.weight: Font.ExtraBold
                     font.pixelSize: 18
-                    font.bold: true
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -129,9 +130,11 @@ Item {
                     Layout.maximumWidth: Math.min(root.height,root.width)-20
                     text: SpotifyServices.displayArtist
                     color: Colors.spotifyArtistColor
-                    font.pixelSize: 13
+                    font.family: "Nunito"
+                    font.pixelSize: 15
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignHCenter
+                    
                 }
 
                 // ---------------- controls: prev / play-pause / next ----------------
@@ -140,8 +143,8 @@ Item {
                     spacing: 5
 
                     Rectangle {
-                        width: 35; height: width; radius: width / 2
-                        color: Colors.spotifyControlColor
+                        width: 35; height: width; radius: width / 3
+                        color: Colors.spotifyControlColor2
                         scale: prevArea.pressed ? 0.9 : 1
                         Text {
                             anchors.centerIn: parent
@@ -178,8 +181,8 @@ Item {
                     }
 
                     Rectangle {
-                        width: 35; height: width; radius: width / 2
-                        color: Colors.spotifyControlColor
+                        width: 35; height: width; radius: width / 3
+                        color: Colors.spotifyControlColor2
                         scale: nextArea.pressed ? 0.9 : 1
                         Text {
                             anchors.centerIn: parent

@@ -192,7 +192,7 @@ Scope {
                                     target: menu
                                     properties: "width,height"
                                     duration: root.animDuration
-                                    easing.type: Easing.OutBack
+                                    easing.type: Easing.OutCubic//OutBack
                                     easing.overshoot: 1.2
                                 }
                                 // content reveal, staggered slightly behind the container
@@ -447,6 +447,7 @@ Scope {
             source: clipper
             opacity: 0.7
             shadowEnabled: true
+            shadowColor: Colors.shadowColor
             shadowBlur: 0.6
             shadowScale: 1.002
             shadowVerticalOffset: {

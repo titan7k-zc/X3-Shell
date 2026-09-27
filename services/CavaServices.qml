@@ -55,7 +55,7 @@ Singleton {
         }
     }
     Component.onCompleted: {
-        cavaProcess.running = true
-        // console.log("started")
+        cavaProcess.running = true 
+        // console.log("cava started")
     }
 }

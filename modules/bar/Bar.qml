@@ -76,6 +76,7 @@ Scope{
 
 
                 MultiEffect {
+                    shadowColor: Colors.shadowColor
                     anchors.fill: shape0
                     source: shape0
 
@@ -127,6 +128,7 @@ Scope{
 
 
                 MultiEffect {
+                    shadowColor: Colors.shadowColor
                     anchors.fill: shape01
                     source: shape01
 
@@ -195,6 +197,7 @@ Scope{
 
                 // shadow
                  MultiEffect {
+                    shadowColor: Colors.shadowColor
                     anchors.fill: shape1
                     source: shape1
 
@@ -260,6 +263,7 @@ Scope{
 
                 // shadow
                  MultiEffect {
+                    shadowColor: Colors.shadowColor
                     anchors.fill: shape2
                     source: shape2
 
