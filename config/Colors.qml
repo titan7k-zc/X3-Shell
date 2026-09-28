@@ -18,14 +18,16 @@ Singleton {
     property int themeAnimationDuration: 800
 
     property var themeColors: [
-        ["Cherry", "#1E1418", "#F0DCE2", "#A98A94", "#D7BBC3", "#FF8FA3", "#FF6B81", "#FF9FB0", "#FF8FA3", "#FF6B81", "#A8D88A"], // AAA
-        ["Crimson", "#000000", '#b0b0b0', "#c8959595", "#959595", "#ffffff", '#ed1358', "#959595",  "#ef2a68", "#ef2a68", "#ef2a68"],//AAA 
-        ["Nord", "#626f89", "#D8DEE9", "#c8D8DEE9", "#D8DEE9", "#ECEFF4", "#88C0D0", "#D8DEE9", "#88C0D0", "#88C0D0", "#88C0D0"], // AAA 
-        ["Monochrome", "#0A0A0A", "#F5F5F5", "#8A8A8A", '#c6d0d0d0', "#FFFFFF", "#FFFFFF", "#E0E0E0", "#FFFFFF", "#FFFFFF", "#FFFFFF"],//AAA 
+        ["Cherry", "#1E1418", "#F0DCE2", "#A98A94", "#D7BBC3", "#FF8FA3", "#FF6B81", "#FF9FB0", "#FF8FA3", "#FF6B81", "#A8D88A",'#1E1418'], // AAA
+        ["Crimson", "#000000", '#b0b0b0', "#c8959595", "#959595", "#ffffff", '#ed1358', "#959595",  "#ef2a68", "#ef2a68", "#ef2a68",'#0e0000'],//AAA 
+        ["Nord", "#626f89", "#D8DEE9", "#c8D8DEE9", "#D8DEE9", "#ECEFF4", "#88C0D0", "#D8DEE9", "#88C0D0", "#88C0D0", "#88C0D0",'#12151b'], // AAA 
+        ["Monochrome", "#0A0A0A", "#F5F5F5", "#8A8A8A", '#c6d0d0d0', "#FFFFFF", "#FFFFFF", "#E0E0E0", "#FFFFFF", "#FFFFFF", "#FFFFFF",'#838383'],//AAA 
 
 
-        ["Gruvbox", "#282828", "#EBDBB2", "#A89984", "#D5C4A1", "#FBF1C7", "#83A598", "#8EC07C",  "#83C07C", "#83A598", "#B8BB26"],
+        ["Ayu Dark", "#0D1017", "#D5D8DA", "#8A9199", "#B7BDC5", "#C7D1DB", "#E6B450", "#73B7FF",  "#E6B450", "#73B7FF", "#7FD962"],
         ["Coffee Dark", "#211B18", "#E8DDD5", "#A4948C", "#D1C0B7", "#D9A066", "#C78B5A", "#E0B084",  "#D9A066", "#D9A066", '#D9A066'], // AA
+        ["Gruvbox", "#282828", "#EBDBB2", "#A89984", "#D5C4A1", "#FBF1C7", "#83A598", "#8EC07C",  "#83C07C", "#83A598", "#B8BB26"],
+        ["Paper White", "#FAFAFA", "#0A0A0A", "#6E6E6E", "#2A2A2A", "#000000", "#000000", "#3A3A3A", "#000000", "#000000", "#000000"],//AA
 
 
         ["Nord Frost", "#2E3440", "#ECEFF4", "#AEB8C7", "#D8DEE9", "#8FBCBB", "#81A1C1", "#88C0D0",  "#88C0D0", "#81A1C1", "#A3BE8C"],
@@ -37,13 +39,11 @@ Singleton {
         ["Tokyo Night", "#1A1B26", "#C0CAF5", "#9AA5CE", "#A9B1D6", "#BB9AF7", "#7AA2F7", "#89DDFF",  "#7DCFFF", "#7AA2F7", "#9ECE6A"],
         ["Dracula", "#282A36", "#F8F8F2", "#BFBFBF", "#F8F8F2", "#8BE9FD", "#BD93F9", "#FF79C6",  "#8BE9FD", "#50FA7B", "#F1FA8C"],
         ["Emerald Night", "#14181F", "#E8EDF2", "#8D98A8", "#C5CDD9", "#4FD1A5", "#4FD1A5", "#63E6BE", "#FFD166", "#4FD1A5", "#A3E4B5"],
-        ["Paper White", "#FAFAFA", "#0A0A0A", "#6E6E6E", "#2A2A2A", "#000000", "#000000", "#3A3A3A", "#000000", "#000000", "#000000"],//AA
         ["Rose Pine", "#191724", "#E0DEF4", "#908CAA", "#E0DEF4", "#F6C177", "#C4A7E7", "#EBBCBA",  "#9CCFD8", "#C4A7E7", "#9CCFD8"],
         ["Everforest", "#2D353B", "#D3C6AA", "#9DA9A0", "#D3C6AA", "#A7C080", "#A7C080", "#83C092",  "#83C092", "#7FBBB3", "#A7C080"],
         ["One Dark", "#282C34", "#ABB2BF", "#7F848E", "#ABB2BF", "#D19A66", "#61AFEF", "#C678DD",  "#56B6C2", "#61AFEF", "#98C379"],
         ["Kanagawa", "#1F1F28", "#DCD7BA", "#727169", "#C8C093", "#98BB6C", "#7E9CD8", "#7FB4CA",  "#7AA89F", "#7E9CD8", "#98BB6C"],
         ["Nord Aurora", "#3B4252", "#ECEFF4", "#D8DEE9", "#E5E9F0", "#A3BE8C", "#88C0D0", "#B48EAD", "#81A1C1", "#88C0D0", "#A3BE8C"],
-        ["Ayu Dark", "#0D1017", "#D5D8DA", "#8A9199", "#B7BDC5", "#C7D1DB", "#E6B450", "#73B7FF",  "#E6B450", "#73B7FF", "#7FD962"],
         ["Material Ocean", "#0F111A", "#EEFFFF", "#8F93A2", "#C5C8C6", "#89DDFF", "#82AAFF", "#C792EA", "#89DDFF", "#82AAFF", "#C3E88D"],
         ["Moonlight", "#222436", "#C8D3F5", "#828BB8", "#A9B8E8", "#86E1FC", "#82AAFF", "#C099FF",  "#86E1FC", "#82AAFF", "#C3E88D"], // AA
         ["Horizon", "#1C1E26", "#D5D8DA", "#A1A1A1", "#D5D8DA", "#E95678", "#FAB795", "#B877DB",  "#25B0BC", "#FAB795", "#29D398"],
@@ -71,7 +71,15 @@ Singleton {
     property color aliveIconColor: themeColors[theme][5]
     property color activeColor: themeColors[theme][6]
     property color focusColor: themeColors[theme][7]
-    property color shadowColor: "#000000"//activeColor//themeColors[theme][-1]
+    property color shadowColor: getShadowColor()
+    property real shadowOpacity: 0.7
+
+    function getShadowColor() {
+        if (!themeColors[theme][11] === null || themeColors[theme][11] === undefined) {
+            return "#000000"
+        }
+        return themeColors[theme][11]
+    }
 
     // === Animations ===
     Behavior on shellBackgroundColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
@@ -81,7 +89,7 @@ Singleton {
     Behavior on aliveIconColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
     Behavior on activeColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
     Behavior on focusColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
-
+    Behavior on shadowColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
 
     // === cava ===
     readonly property color cavaBackgroundColor: powerBarBulletColor
@@ -98,18 +106,18 @@ Singleton {
 
     // === Brightness ===
     property color brightnessIconColor: themeColors[theme][8]
-    Behavior on brightnessIconColor { ColorAnimation { duration: 300; easing.type: Easing.InOutQuad } }
+    Behavior on brightnessIconColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
     readonly property color brightnessTextColor: mainTextColor
 
     // === Volume ===
     property color volumeIconColor: themeColors[theme][9]
-    Behavior on volumeIconColor { ColorAnimation { duration: 300; easing.type: Easing.InOutQuad } }
+    Behavior on volumeIconColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
     readonly property color volumeTextColor: mainTextColor
 
 
     // === Battery ===
     property color batteryIconColor: themeColors[theme][10]
-    Behavior on batteryIconColor { ColorAnimation { duration: 300; easing.type: Easing.InOutQuad } }
+    Behavior on batteryIconColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
     readonly property color batteryTextColor: mainTextColor
 
 
@@ -136,7 +144,7 @@ Singleton {
 
     // === Wallpaper ===
     readonly property color wallpaperLoadingTextColor: mainTextColor
-    readonly property color themeBackgroundColor: "#a9000000"
+    readonly property color themeBackgroundColor:Qt.rgba(activeColor.r, activeColor.g, activeColor.b, 0.1)// "#a9000000"
     readonly property color themeIconColor: activeColor
     readonly property color themeTextColor: mainTextColor
     readonly property color wallthemeSelectedColor: secondaryTextColor   

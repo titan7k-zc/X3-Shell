@@ -1,4 +1,6 @@
 import QtQuick
+import QtQuick
+import QtQuick.Layouts
 import QtQuick.Effects
 import Quickshell
 import Quickshell.Io
@@ -76,7 +78,6 @@ Scope{
 
 
                 MultiEffect {
-                    opacity: Colors.shadowOpacity
                     shadowColor: Colors.shadowColor
                     anchors.fill: shape0
                     source: shape0
@@ -86,7 +87,7 @@ Scope{
                     shadowScale: 1
                     shadowVerticalOffset:3
                     shadowHorizontalOffset:0
-                    
+                    opacity: Colors.shadowOpacity
                 }
             }
 
@@ -115,8 +116,55 @@ Scope{
                         anchors.right: parent.right
                         anchors.left: parent.left
                         height: bottomBarWindow.barHeight
-                        color:"black"
+                        color:"Black"
                         
+                        // RowLayout{
+                        //     anchors.fill: parent
+                        //     Rectangle{
+                        //         Layout.preferredWidth: 800
+                        //         Layout.fillHeight:true
+                        //         color:root.borderColor
+                        //         topRightRadius: root.rootRadius
+                                
+                        //         Curves{
+                        //             anchors.bottom: parent.bottom
+                        //             anchors.left: parent.right
+                        //             width: root.rootRadius
+                        //             height: root.rootRadius
+                        //             radius: root.rootRadius
+                        //             isTop: false
+                        //             color: root.borderColor
+                        //             z: 10
+                        //         }
+                        //     }
+                        //     Rectangle{
+                        //         Layout.fillHeight:true
+                        //         Layout.fillWidth:true
+                        //         Layout.leftMargin: 50
+                        //         Layout.rightMargin: 50
+                        //         color:'#000000'
+                        //     }
+
+                        //     Rectangle{
+                        //         Layout.preferredWidth: 800
+                        //         Layout.fillHeight:true
+                        //         color:root.borderColor
+                        //         topLeftRadius: root.rootRadius
+                        //         Curves{
+                        //             anchors.bottom: parent.bottom
+                        //             anchors.right: parent.left
+                        //             width: root.rootRadius
+                        //             height: root.rootRadius
+                        //             radius: root.rootRadius
+                        //             isTop: false
+                        //             mirrored: true
+                        //             color: root.borderColor
+                        //             z: 10
+                        //         }
+                                
+                        //     }
+                        // }
+
                         Rectangle{
                             anchors.fill: parent
                             color: root.borderColor
@@ -129,7 +177,6 @@ Scope{
 
 
                 MultiEffect {
-                    opacity: Colors.shadowOpacity
                     shadowColor: Colors.shadowColor
                     anchors.fill: shape01
                     source: shape01
@@ -139,7 +186,7 @@ Scope{
                     shadowScale: 1
                     shadowVerticalOffset:-3
                     shadowHorizontalOffset: 0
-                    
+                    opacity: Colors.shadowOpacity
                 }
             }
 
@@ -199,17 +246,16 @@ Scope{
 
                 // shadow
                  MultiEffect {
-                    opacity: Colors.shadowOpacity
                     shadowColor: Colors.shadowColor
                     anchors.fill: shape1
                     source: shape1
 
                     shadowEnabled: true
                     shadowBlur: 0.6
-                    shadowScale: 0.998
+                    shadowScale: 0.996
                     shadowVerticalOffset:0
                     shadowHorizontalOffset: -3
-                    
+                    opacity: Colors.shadowOpacity
                 }
             }
 
@@ -262,21 +308,21 @@ Scope{
                             z: 10
                         }
                     }
+                    
                 }
 
                 // shadow
                  MultiEffect {
-                    opacity: Colors.shadowOpacity
                     shadowColor: Colors.shadowColor
                     anchors.fill: shape2
                     source: shape2
 
                     shadowEnabled: true
                     shadowBlur: 0.6
-                    shadowScale: 0.998
+                    shadowScale: 0.996
                     shadowVerticalOffset: 0
                     shadowHorizontalOffset: 3
-                    
+                    opacity: Colors.shadowOpacity
                 }
             }
 

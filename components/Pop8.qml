@@ -445,7 +445,7 @@ Scope {
         MultiEffect {
             anchors.fill: clipper
             source: clipper
-            opacity: 0.7
+            opacity: Colors.shadowOpacity
             shadowEnabled: true
             shadowColor: Colors.shadowColor
             shadowBlur: 0.6

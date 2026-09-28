@@ -117,7 +117,7 @@ Item {
                 Text {
                     Layout.alignment: Qt.AlignHCenter
                     Layout.maximumWidth: Math.min(root.height,root.width)-20
-                    text: "2"+SpotifyServices.displayTitle
+                    text: SpotifyServices.displayTitle
                     color: Colors.spotifyTitleColor
                     font.family: "Nunito"
                     font.weight: Font.ExtraBold

@@ -56,7 +56,7 @@ Item{
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         anchors.leftMargin: 10
-                        text: tb.displayTitle
+                        text: tb.displayTitle.length > 50? tb.displayTitle.substring(0, 50) + " ...": tb.displayTitle
                         color: Qt.rgba(Colors.powerBarTextColor.r, Colors.powerBarTextColor.g, Colors.powerBarTextColor.b, 0.7)
                         font{
                             family:"Quicksand"
