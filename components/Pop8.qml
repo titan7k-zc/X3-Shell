@@ -103,7 +103,7 @@ Scope {
         id: menuWindow
 
         WlrLayershell.layer: WlrLayer.Top//WlrLayer.Overlay
-        WlrLayershell.keyboardFocus: root.show ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None  // to get keybord input for menu
+        WlrLayershell.keyboardFocus: root.show ? WlrKeyboardFocus.OnDemand : WlrKeyboardFocus.None
         exclusiveZone: 0
         color: "Transparent"
 
@@ -123,7 +123,7 @@ Scope {
 
         property var midMask: Region {item: menu}
 
-        mask: root.show ? null : midMask
+        mask: midMask
 
 
         Item {

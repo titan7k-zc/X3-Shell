@@ -156,6 +156,7 @@ Scope{
                 anchors.right: true
                 implicitWidth: barWidth+radius
                 exclusiveZone: barWidth
+                WlrLayershell.layer:WlrLayer.Top
 
                 Item {
                     id: shape1
