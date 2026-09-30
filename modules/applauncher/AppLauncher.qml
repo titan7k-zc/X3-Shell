@@ -13,7 +13,7 @@ FocusScope {
 
 
 
-    Component.onCompleted:root.forceActiveFocus()
+    // Component.onCompleted:root.forceActiveFocus()
 
     // ─────────────────────────────────────────────────────────────
     // State
@@ -35,7 +35,7 @@ FocusScope {
 
     readonly property int maxVisibleItems: 4
     readonly property int rowHeight: 80
-    readonly property int panelWidth: 640
+    readonly property int panelWidth:400 //640
     readonly property int panelPadding: 12
     readonly property int searchBarHeight: 44
     readonly property int panelHeaderHeight: 88

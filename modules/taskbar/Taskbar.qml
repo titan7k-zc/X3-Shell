@@ -8,7 +8,9 @@ import "../../config"
 ListView {
     id: root
 
-    width: root.count? Math.min(320, (height+2) * root.count) : desktopText.implicitWidth+30
+    property var maxWidth: 320
+
+    width: root.count? Math.min(root.maxWidth, (height+2) * root.count) : desktopText.implicitWidth+30
     height: 40
     
     Behavior on width {
@@ -50,6 +52,10 @@ ListView {
         color: Colors.taskbarTextColor
         text: " Desktop "
         anchors.centerIn: parent
+
+        font.family:"Quicksand"
+        font.pixelSize: 18
+        font.weight: Font.Bold
 
         opacity: root.count === 0 ? 1 : 0
         scale: root.count === 0 ? 1 : 0.85

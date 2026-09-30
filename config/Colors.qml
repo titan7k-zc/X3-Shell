@@ -10,8 +10,9 @@ Singleton {
 
     Settings {
         id: settings
-        property int theme: 0
+        property int theme: 9
     }
+
 
 
 
@@ -26,9 +27,9 @@ Singleton {
 
         ["Ayu Dark", "#0D1017", "#D5D8DA", "#8A9199", "#B7BDC5", "#C7D1DB", "#E6B450", "#73B7FF",  "#E6B450", "#73B7FF", "#7FD962"],
         ["Coffee Dark", "#211B18", "#E8DDD5", "#A4948C", "#D1C0B7", "#D9A066", "#C78B5A", "#E0B084",  "#D9A066", "#D9A066", '#D9A066'], // AA
-        ["Gruvbox", "#282828", "#EBDBB2", "#A89984", "#D5C4A1", "#FBF1C7", "#83A598", "#8EC07C",  "#83C07C", "#83A598", "#B8BB26"],
-        ["Paper White", "#FAFAFA", "#0A0A0A", "#6E6E6E", "#2A2A2A", "#000000", "#000000", "#3A3A3A", "#000000", "#000000", "#000000"],//AA
-
+        ["Gruvbox", "#282828", "#EBDBB2", "#A89984", "#D5C4A1", "#FBF1C7", "#83A598", "#8EC07C",  "#83C07C", "#83A598", '#49bb26'],
+        ["Paper White", '#bab6b6', "#0A0A0A", "#6E6E6E", "#2A2A2A", "#000000", "#000000", "#3A3A3A", "#000000", "#000000", "#000000"],//AA
+                        //FAFAFA
 
         ["Nord Frost", "#2E3440", "#ECEFF4", "#AEB8C7", "#D8DEE9", "#8FBCBB", "#81A1C1", "#88C0D0",  "#88C0D0", "#81A1C1", "#A3BE8C"],
         ["Polar Night", "#242933", "#E5E9F0", "#9AA4B2", "#C8D0DC", "#81A1C1", "#88C0D0", "#8FBCBB", "#88C0D0", "#81A1C1", "#A3BE8C"],
@@ -92,9 +93,13 @@ Singleton {
     Behavior on shadowColor { ColorAnimation { duration: root.themeAnimationDuration; easing.type: Easing.InOutQuad } }
 
     // === cava ===
-    readonly property color cavaBackgroundColor: powerBarBulletColor
-    readonly property color cavaBarColor: Qt.rgba(activeColor.r, activeColor.g, activeColor.b, 1.0)
+    readonly property color cavaBackgroundColor: Qt.rgba(shellBackgroundColor, shellBackgroundColor, shellBackgroundColor, 0.3)
+    readonly property color cavaBarColor: mainTextColor
+    readonly property color cavaBarColor2: Qt.rgba(activeColor.r, activeColor.g, activeColor.b, 1.0)
 
+    // === Weather ===
+    readonly property color weatherPrimaryColor: mainTextColor
+    readonly property color weatherPrimaryColor2: Qt.rgba(activeColor.r, activeColor.g, activeColor.b, 1.0)
 
     // === Workspace ===
     readonly property color workspaceActiveColor: activeColor
@@ -171,6 +176,7 @@ Singleton {
 
     // === Bar ===
     readonly property color barBorderColor: shellBackgroundColor
+    readonly property color barButtonColor: activeColor
 
     // === Power bar / topbar ===
     readonly property color powerBarTextColor: mainTextColor

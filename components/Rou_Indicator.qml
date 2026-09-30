@@ -14,10 +14,10 @@ Item {
     required property color icColor
     required property color trackColor
 
-    // Optional extras (sane defaults, override if you like)
+    // Optional extras (sane defaults)
     property bool showTrack: true
     property real ringWidth: Math.max(2, Math.min(width, height) * 0.09)
-    property string iconFontFamily: "" // set to your icon font name if needed
+    property string iconFontFamily: "" // set if needed
     property real iconSizeRatio: 0.4   // icon size relative to component size
     property int animationDuration: 250
     property string start: "bottom"

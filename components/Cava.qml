@@ -9,7 +9,8 @@ Item{
     property real radius:10
     property color bgColor:Colors.cavaBackgroundColor
     property color barColor:Colors.cavaBarColor
-
+    property bool anchorBottom: false
+    
 
     width:360
     height:50
@@ -19,9 +20,11 @@ Item{
         radius: root.radius
         color: root.bgColor
 
+
         Row{
             anchors.fill: parent
             anchors.margins: 8
+            anchors.bottomMargin: root.anchorBottom ? 0 : 8
             spacing: 4
 
             Repeater{
@@ -34,7 +37,14 @@ Item{
                     height: parent.height
 
                     Rectangle{
-                        anchors.centerIn: parent
+                        anchors.centerIn: !root.anchorBottom ? parent : undefined
+                        
+                        anchors.bottom: root.anchorBottom ? parent.bottom : undefined
+
+
+
+
+
                         width: parent.width
                         height: Math.max(width, parent.height * modelData)
                         radius: width / 2

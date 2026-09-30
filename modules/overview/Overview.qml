@@ -67,7 +67,7 @@ Item {
 
                             color: Colors.overviewIndicatorColor
 
-                            font.family: "Nunito"
+                            font.family: "Quicksand"
                             font.weight: Font.ExtraBold
                             font.letterSpacing:0
                             font.pixelSize: Math.min(
@@ -88,7 +88,7 @@ Item {
                             text: TimeServices.date
                             color: Colors.overviewSecondaryTextColor
 
-                            font.family: "Nunito"
+                            font.family: "Quicksand"
                             font.weight: Font.Bold
                             font.pixelSize: parent.parent.height * 0.04
 
@@ -136,7 +136,7 @@ Item {
                             anchors.verticalCenterOffset:15
                             text:"󰌽  : X2 Shell\n  : Titan"
                             color: Colors.overviewTextColor
-                            font.family: "Nunito"
+                            font.family: "Quicksand"
                             font.weight: Font.Bold
                             font.pixelSize:20
 
@@ -256,7 +256,7 @@ Item {
                                 }
                             
                                 font.pixelSize: col.fSize
-                                font.family: "Nunito"
+                                font.family: "Quicksand"
                                 font.weight: Font.Bold
                             }
                         }
@@ -297,7 +297,7 @@ Item {
                                 }
                             
                                 font.pixelSize: col.fSize
-                                font.family: "Nunito"
+                                font.family: "Quicksand"
                                 font.weight: Font.Bold
                             }
                         }

@@ -12,6 +12,8 @@ Scope {
     property bool show: false
     property bool unloadOnClose: false
 
+    property bool activeMouse: false
+
     // true immediately on open, stays true until the close animation finishes
     property bool loaderActive: false
 
@@ -124,6 +126,13 @@ Scope {
         property var midMask: Region {item: menu}
 
         mask: midMask
+
+
+        HoverHandler {
+            onHoveredChanged: {
+                root.activeMouse = hovered
+            }
+        }
 
 
         Item {

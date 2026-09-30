@@ -119,7 +119,7 @@ Item {
                     Layout.maximumWidth: Math.min(root.height,root.width)-20
                     text: SpotifyServices.displayTitle
                     color: Colors.spotifyTitleColor
-                    font.family: "Nunito"
+                    font.family: "Quicksand"
                     font.weight: Font.ExtraBold
                     font.pixelSize: 18
                     elide: Text.ElideRight
@@ -130,7 +130,7 @@ Item {
                     Layout.maximumWidth: Math.min(root.height,root.width)-20
                     text: SpotifyServices.displayArtist
                     color: Colors.spotifyArtistColor
-                    font.family: "Nunito"
+                    font.family: "Quicksand"
                     font.pixelSize: 15
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignHCenter

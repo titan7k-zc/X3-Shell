@@ -45,34 +45,39 @@ Item {
         cursorShape: Qt.PointingHandCursor
     }
 
-    RowLayout {
-        id: row
+    Row {
+    id: row
 
-        anchors.fill: parent
-        spacing: 6
+    anchors.centerIn: parent
+    spacing: 6
 
-        Text {
-            text: "󰃟"   // fixed brightness glyph — replace with whichever you like
-            color: Colors.brightnessIconColor
+    Text {
+        text: "󰃟"
+        color: Colors.brightnessIconColor
 
-            font {
-                family: "JetBrainsMono Nerd Font Mono"
-                pixelSize: 20
-                weight: 600
-                letterSpacing: 0
-            }
+        font {
+            family: "JetBrainsMono Nerd Font Mono"
+            pixelSize: 20
+            weight: 600
+            letterSpacing: 0
         }
 
-        Text {
-            text: root.val + "%  "
-            color: Colors.brightnessTextColor
-
-            font {
-                family: "JetBrainsMono Nerd Font Mono"
-                pixelSize: 14
-                weight: 600
-                letterSpacing: 0
-            }
-        }
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: 1
     }
+
+    Text {
+        text: root.val + "%"
+        color: Colors.brightnessTextColor
+
+        font {
+            family: "Quicksand"
+            pixelSize: 14
+            weight: 600
+            letterSpacing: 0
+        }
+
+        anchors.verticalCenter: parent.verticalCenter
+    }
+}
 } 

@@ -6,6 +6,8 @@ Row {
     id: root
 
     spacing:6
+    anchors.centerIn: parent
+    anchors.verticalCenterOffset: 1
 
     property var battery: UPower.displayDevice
     property bool charging: battery.state === UPowerDeviceState.Charging
@@ -44,7 +46,7 @@ Row {
 
 
         font {
-            family: "JetBrainsMono Nerd Font"
+            family: "Quicksand"
             letterSpacing: 0
             pixelSize: 14
             weight: 600

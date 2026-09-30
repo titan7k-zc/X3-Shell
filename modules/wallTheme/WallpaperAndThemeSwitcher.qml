@@ -102,7 +102,7 @@ FocusScope {
     FolderListModel {
         id: wallpaperFolder
         folder: wall.folderpath
-        nameFilters: ["*.png", "*.jpg", "*.jpeg", "*.webp"]
+        nameFilters: ["*.png", "*.jpg", "*.jpeg", "*.webp",]
         showDirs: false
 
         onStatusChanged: {
@@ -454,7 +454,7 @@ FocusScope {
                                     anchors.top: parent.top
                                     anchors.topMargin: 5
                                     text: Colors.themeColors[index][0]
-                                    font.family: "Nunito"
+                                    font.family: "Quicksand"
                                     font.weight: Font.Bold
                                     font.pixelSize: colorList.currentIndex === parentIndex ? 18 : 16
                                     color: Colors.mainTextColor
